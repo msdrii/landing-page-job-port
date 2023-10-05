@@ -1,0 +1,335 @@
+
+      const mySwiper = new Swiper(".swiper", {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        spaceBetween: 20,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2.6,
+            spaceBetween: 40,
+          },
+        },
+      });
+
+      let count = 1;
+      const pageNumElement = document.getElementsByClassName("js-pageNum");
+      const pageFormElement = document.getElementsByClassName(
+        "js-pageForm pointer-events-none"
+      );
+      const pageHeight = document.getElementsByClassName("js-pageHeight");
+      const pageTextElement = document.getElementsByClassName("js-pageText");
+
+      const giveClass = (method) => {
+        for (let i = 0; i < pageNumElement.length; i++) {
+          let page = pageNumElement[i].getAttribute("data-page");
+          if (page == count) {
+            pageNumElement[i].classList.add("num_active");
+          } else {
+            pageNumElement[i].classList.remove("num_active");
+          }
+        }
+        for (let i = 0; i < pageNumElement.length; i++) {
+          let page = pageFormElement[i].getAttribute("data-page");
+          if (page == count) {
+            pageFormElement[i].classList.add("form_active");
+          } else {
+            pageFormElement[i].classList.remove("form_active");
+          }
+        }
+        for (let i = 0; i < pageNumElement.length; i++) {
+          let page = pageFormElement[i].getAttribute("data-page");
+          if (page == count - 1) {
+            pageFormElement[i].classList.add("prev_active");
+          } else {
+            pageFormElement[i].classList.remove("prev_active");
+          }
+        }
+        for (let i = 0; i < pageHeight.length; i++) {
+          if (method == "next") {
+            pageHeight[i].classList.replace(
+              "page_height0" + String(count - 1),
+              "page_height0" + String(count)
+            );
+          } else {
+            pageHeight[i].classList.replace(
+              "page_height0" + String(count + 1),
+              "page_height0" + String(count)
+            );
+          }
+        }
+        for (let i = 0; i < pageTextElement.length; i++) {
+          let page = pageTextElement[i].getAttribute("data-page");
+          if (page == count) {
+            pageTextElement[i].classList.add("text_active");
+          } else {
+            pageTextElement[i].classList.remove("text_active");
+          }
+        }
+      };
+      const next = () => {
+        count += 1;
+        giveClass("next");
+      };
+      const prev = () => {
+        count -= 1;
+        giveClass("prev");
+      };
+
+      const answer01 = document.getElementById("js-answer01");
+      const answer02 = document.getElementById("js-answer02");
+      const answer03 = document.getElementById("js-answer03");
+      const answer04 = document.getElementById("js-answer04");
+      const answer05 = document.getElementById("js-answer05");
+      const answer06 = document.getElementById("js-answer06");
+      const answer07 = document.getElementById("js-answer07");
+      const answer08 = document.getElementById("js-answer08");
+      
+      //初期値
+      answer08.value = "いつでも可";
+
+      let furiganaElement01 = "";
+      let furiganaElement02 = "";
+      let furiganaElement03 = "";
+
+      const age01 = document.getElementById("age01");
+      const age02 = document.getElementById("age02");
+      const age03 = document.getElementById("age03");
+      const name01 = document.getElementById("name01");
+      const name02 = document.getElementById("name02");
+      const name03 = document.getElementById("name03");
+      const furigana01 = document.getElementById("furigana01");
+      const furigana02 = document.getElementById("furigana02");
+      const furigana03 = document.getElementById("furigana03");
+      const tel01 = document.getElementById("tel01");
+      const tel02 = document.getElementById("tel02");
+      const tel03 = document.getElementById("tel03");
+      const time01 = document.getElementById("time01");
+      const time02 = document.getElementById("time02");
+      const time03 = document.getElementById("time03");
+
+      const answer = (target, num) => {
+        if (num == 1) {
+          answer01.value = target.value;
+        }
+        if (num == 2) {
+          answer02.value = target.value;
+        }
+        if (num == 3) {
+          answer03.value = target.value;
+        }
+        if (num == 4) {
+          answer04.value = target.options[target.options.selectedIndex].value;
+          age01.options[target.options.selectedIndex].selected = true;
+          age02.options[target.options.selectedIndex].selected = true;
+          age03.options[target.options.selectedIndex].selected = true;
+        }
+        if (num == 5) {
+          answer05.value = target.value;
+          name01.value = target.value;
+          name02.value = target.value;
+          name03.value = target.value;
+          if (target.id == "name01") {
+            //ふりがなの解答欄に挿入
+            answer06.value = furiganaElement01.furigana;
+            furigana01.value = furiganaElement01.furigana;
+            furigana02.value = furiganaElement01.furigana;
+            furigana03.value = furiganaElement01.furigana;
+          }
+          if (target.id == "name02") {
+            answer06.value = furiganaElement02.furigana;
+            furigana01.value = furiganaElement02.furigana;
+            furigana02.value = furiganaElement02.furigana;
+            furigana03.value = furiganaElement02.furigana;
+          }
+          if (target.id == "name03") {
+            answer06.value = furiganaElement03.furigana;
+            furigana01.value = furiganaElement03.furigana;
+            furigana02.value = furiganaElement03.furigana;
+            furigana03.value = furiganaElement03.furigana;
+          }
+        }
+        if (num == 6) {
+          answer06.value = target.value;
+          furigana01.value = target.value;
+          furigana02.value = target.value;
+          furigana03.value = target.value;
+        }
+        if (num == 7) {
+          target.value = target.value.replace(/-/g, "");
+          answer07.value = target.value.replace(/-/g, "");
+          tel01.value = target.value.replace(/-/g, "");
+          tel02.value = target.value.replace(/-/g, "");
+          tel03.value = target.value.replace(/-/g, "");
+        }
+        if (num == 8) {
+          answer08.value = target.options[target.options.selectedIndex].value;
+          time01.options[target.options.selectedIndex].selected = true;
+          time02.options[target.options.selectedIndex].selected = true;
+          time03.options[target.options.selectedIndex].selected = true;
+        } else {
+        }
+      };
+
+      const submitBtnElement = document.getElementById("js-submit");
+      const submit = () => {
+        //空欄があるかどうか
+        if (answer01.value == "") {
+          alert(answer01.name + "が空欄です。");
+        }
+        if (answer02.value == "") {
+          alert(answer02.name + "が空欄です。");
+        }
+        if (answer03.value == "") {
+          alert(answer03.name + "が空欄です。");
+        }
+        if (answer04.value == "") {
+          alert(answer04.name + "が空欄です。");
+        }
+        if (answer05.value == "") {
+          alert(answer05.name + "が空欄です。");
+        }
+        if (answer06.value == "") {
+          alert(answer06.name + "が空欄です。");
+        }
+        if (answer07.value == "") {
+          alert(answer07.name + "が空欄です。");
+        }
+        if (answer08.value == "") {
+          alert(answer08.name + "が空欄です。");
+        }
+
+        const hiragana =
+          /[\u{3000}-\u{301C}\u{3041}-\u{3093}\u{309B}-\u{309E}]/mu;
+        //ふりがな欄のひらがな判定
+        if (hiragana.test(answer06.value) == false) {
+          alert("ふりがなの欄には「ひらがな」で入力ください");
+        }
+
+        const tel = /^0\d{9,10}$/;
+        //電話番号の判定
+        if (tel.test(answer07.value) == false) {
+          alert("電話番号はハイフン無しで半角英数字で入力ください");
+        }
+
+        //空欄あった時送信しない
+        if (
+          answer01.value == "" ||
+          answer02.value == "" ||
+          answer03.value == "" ||
+          answer04.value == "" ||
+          answer05.value == "" ||
+          answer06.value == "" ||
+          answer07.value == "" ||
+          answer08.value == "" 
+        ) {
+          return false;
+        }
+
+        //ふりがな欄のひらがなじゃないとき送信しない
+        if (hiragana.test(answer06.value) == false) {
+          return false;
+        }
+
+        //電話番号の形式が不正の場合送信しない
+        if (tel.test(answer07.value) == false) {
+          return false;
+        }
+
+        submitBtnElement.click();
+      };
+
+      // ふりがな自動入力
+      document.addEventListener("DOMContentLoaded", function () {
+        furiganaElement01 = AutoKana.bind("#name01", "#furigana01");
+      });
+      AutoKana.bind("#name01", "#furigana01", { katakana: false });
+
+      // ふりがな自動入力
+      document.addEventListener("DOMContentLoaded", function () {
+        furiganaElement02 = AutoKana.bind("#name02", "#furigana02");
+      });
+      AutoKana.bind("#name02", "#furigana02", { katakana: false });
+      // ふりがな自動入力
+      document.addEventListener("DOMContentLoaded", function () {
+        furiganaElement03 = AutoKana.bind("#name03", "#furigana03");
+      });
+      AutoKana.bind("#name03", "#furigana03", { katakana: false });
+
+      // 電話番号のハイフンを抜く
+      const replaceHyphen = (target) => {
+        answer07.value = target.value.replace("-", "");
+      };
+
+      let winsize = document.body.clientWidth;
+      let devicesize = winsize < 768 ? 768 : 1536;
+      window.addEventListener("resize", () => {
+        winsize = document.body.clientWidth;
+        devicesize = winsize < 768 ? 768 : 1536;
+      });
+      const openCase = (target) => {
+        const btnElement = target;
+        const textElement =
+          btnElement.previousElementSibling.getElementsByClassName(
+            "js-casecontents"
+          )[0];
+        const textHeight =
+          (textElement.children[0].clientHeight * devicesize) / winsize + 32;
+        const activeFlug = btnElement.getAttribute("data-open");
+        if (activeFlug == "true") {
+          btnElement.textContent = "閉じる";
+          btnElement.classList.add("btn_arrow_active");
+          textElement.classList.add("case_active");
+          textElement.style.height = (textHeight * 1) / 100 + "rem";
+          btnElement.setAttribute("data-open", "false");
+        } else {
+          btnElement.textContent = "もっと見る";
+          btnElement.classList.remove("btn_arrow_active");
+          textElement.classList.remove("case_active");
+          textElement.style.height = 0;
+          btnElement.setAttribute("data-open", "true");
+        }
+      };
+      const openA = (target) => {
+        const btnElement = target;
+        const textElement = btnElement.getElementsByClassName("js-a-text")[0];
+        const iconElement = btnElement.children[0];
+        const textHeight =
+          (textElement.children[0].clientHeight * devicesize) / winsize + 20;
+        const activeFlug = btnElement.getAttribute("data-open");
+        if (activeFlug == "true") {
+          iconElement.classList.add("btn_arrow_q_active");
+          textElement.classList.add("a_active");
+          textElement.style.height = (textHeight * 1) / 100 + "rem";
+          btnElement.setAttribute("data-open", "false");
+        } else {
+          iconElement.classList.remove("btn_arrow_q_active");
+          textElement.classList.remove("a_active");
+          textElement.style.height = 0;
+          btnElement.setAttribute("data-open", "true");
+        }
+      };
+
+      //固定ボタン
+      let topHeight =
+        document.getElementById("js-top01").clientHeight +
+        document.getElementById("js-top02").clientHeight;
+
+      const holdBtnElement = document.getElementById("js-holdbtn");
+      document.addEventListener("scroll", () => {
+        let scroll_y = window.scrollY;
+        if (scroll_y > topHeight) {
+          holdBtnElement.classList.add("holdbtn_active");
+        } else {
+          holdBtnElement.classList.remove("holdbtn_active");
+        }
+      });
+    
