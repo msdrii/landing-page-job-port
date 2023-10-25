@@ -15,7 +15,7 @@ Version: 1.0.0
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: #E8E9ED;
   /* 2 */
 }
 ::before,
@@ -29,6 +29,7 @@ Version: 1.0.0
 4. Use the user's configured `sans` font-family by default.
 */
 html {
+  font-size: 10px;
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -51,6 +52,95 @@ body {
   line-height: inherit;
   /* 2 */
 }
+
+/* JOBPORT addition start*/
+header .inner {
+  /* padding: 4px 10% 0 */
+  margin: 10px 10px;
+}
+
+#topvideo {
+  background-size: cover;
+  min-height: 100%;
+  min-height: 70vh;
+  min-width: 100%;
+  min-width: 100vw;
+  object-fit: cover;
+  /* position: absolute; */
+  z-index: 9;
+}
+
+@media screen and (max-width:1120px) {
+  header {
+      width: 100%
+  }
+
+  header .inner {
+      padding: 4px 0;
+      max-width: calc(100% - 40px);
+      margin: 10px auto;
+  }
+}
+
+@media screen and (min-width:1121px) and (max-width:1216px) {
+  header {
+      width: 100%
+  }
+
+  header .inner {
+      padding: 4px 0;
+      max-width: calc(100% - 40px);
+      margin: 10px auto;
+  }
+}
+
+header .shoulder-title {
+  font-size: 0.2rem;
+  color: #666666;
+  margin: 0 0 8px
+}
+
+@media screen and (max-width:769px) {
+  header {
+      position: static
+  }
+
+  header .inner {
+      padding: 0;
+      width: 100%;
+      margin: 10px auto;
+      position: relative
+  }
+
+  header .shoulder-title {
+      font-size: 0.15rem;
+      margin: 0 0 5px
+  }
+
+  header img {
+      height: 0.5rem;
+      width: auto
+  }
+
+  header .signin {
+      position: absolute;
+      top: 10px;
+      right: 0
+  }
+
+  header .signin a {
+      color: #ADB5D0;
+      border: 1px solid #ADB5D0;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+      border-radius: 4px;
+      padding: 6px 11px 6px 11px;
+      display: inline-block;
+      min-height: 28px
+  }
+}
+/* JOBPORT addition end*/
+
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
@@ -292,20 +382,20 @@ textarea {
 input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
-  color: #9ca3af;
+  color: #9AA1AA;
   /* 2 */
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1;
   /* 1 */
-  color: #9ca3af;
+  color: #9AA1AA;
   /* 2 */
 }
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
   /* 1 */
-  color: #9ca3af;
+  color: #9AA1AA;
   /* 2 */
 }
 /*
@@ -1313,7 +1403,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 html {
   /* ベースフォント */
   font-family: "Noto Sans JP", sans-serif;
-  color: #343b42;
+  color: #363D45;
   scroll-behavior: smooth;
 }
 ::-moz-placeholder {
