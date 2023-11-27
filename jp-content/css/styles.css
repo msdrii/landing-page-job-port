@@ -975,9 +975,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b-\[0\.03rem\] {
   border-bottom-width: 0.03rem;
 }
-.border-\[\#659ed8\] {
+.border-\[\#13C716\] {
   --tw-border-opacity: 1;
-  border-color: rgb(101 158 216 / var(--tw-border-opacity));
+  border-color: rgb(19 199 22 / var(--tw-border-opacity));
 }
 .border-\[\#cfd3d7\] {
   --tw-border-opacity: 1;
@@ -999,9 +999,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-\[\#659ed8\] {
+.bg-\[\#13C716\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(101 158 216 / var(--tw-bg-opacity));
+  background-color: rgb(19 199 22 / var(--tw-bg-opacity));
 }
 .bg-\[\#cfd3d7\] {
   --tw-bg-opacity: 1;
@@ -1266,9 +1266,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tracking-o-30 {
   letter-spacing: 0.030em;
 }
-.text-\[\#659ed8\] {
+.text-\[\#13C716\] {
   --tw-text-opacity: 1;
-  color: rgb(101 158 216 / var(--tw-text-opacity));
+  color: rgb(19 199 22 / var(--tw-text-opacity));
+}
+.text-\[\#1b94e0\] {
+  --tw-text-opacity: 1;
+  color: rgb(27 149 224 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -1455,15 +1459,15 @@ html {
   height: 5rem;
 }
 .mainbg {
-  background-color: hsla(53, 56%, 90%, 1);
+  background-color: rgb(215, 244, 241);
   background-image: radial-gradient(
-      at 98% 8%,
-      hsla(1, 88%, 79%, 1) 0px,
+      at 99% 15%,
+      rgb(74, 214, 76) 0px,
       transparent 50%
     ),
-    radial-gradient(at 50% 47%, hsla(55, 73%, 89%, 1) 0px, transparent 50%),
-    radial-gradient(at 8% 84%, hsla(197, 85%, 75%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 10%, hsla(268, 56%, 78%, 1) 0px, transparent 50%);
+    radial-gradient(at 60% 30%, rgb(247, 206, 206) 0px, transparent 50%),
+    radial-gradient(at 8% 84%, rgb(209, 245, 137) 0px, transparent 50%),
+    radial-gradient(at 0% 20%, rgb(81, 222, 235) 0px, transparent 50%);
 }
 .ctaBg {
   background-color: hsla(195, 86%, 74%, 1);
@@ -1472,9 +1476,7 @@ html {
       hsla(212, 82%, 77%, 1) 0px,
       transparent 50%
     ),
-    radial-gradient(at 98% 8%, hsla(218, 76%, 83%, 1) 0px, transparent 50%),
-    radial-gradient(at 8% 84%, hsla(197, 85%, 75%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 10%, hsla(268, 56%, 78%, 1) 0px, transparent 50%);
+    radial-gradient(at 98% 8%, hsla(218, 76%, 83%, 1) 0px, transparent 50%);
 }
 .btn_arrow {
   position: relative;
@@ -1540,7 +1542,7 @@ html {
   margin-top: 0.56rem;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #659ed8;
+  background-color: #13C716;
   width: 1.31rem;
   height: 0.16rem;
   display: inline-block;
@@ -1643,9 +1645,13 @@ html {
 .last\:mb-0:last-child {
   margin-bottom: 0px;
 }
-.hover\:bg-\[\#659ed8\]:hover {
+.hover\:bg-\[\#13C716\]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(101 158 216 / var(--tw-bg-opacity));
+  background-color: rgb(19 199 22 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#1b94e0\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 149 224 / var(--tw-bg-opacity));
 }
 .hover\:bg-\[\#ef371e\]:hover {
   --tw-bg-opacity: 1;
@@ -1659,9 +1665,9 @@ html {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.peer:checked ~ .peer-checked\:bg-\[\#659ed8\] {
+.peer:checked ~ .peer-checked\:bg-\[\#13C716\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(101 158 216 / var(--tw-bg-opacity));
+  background-color: rgb(19 199 22 / var(--tw-bg-opacity));
 }
 .peer:checked ~ .peer-checked\:text-white {
   --tw-text-opacity: 1;
