@@ -2282,6 +2282,23 @@ iframe {
   display: block;
   margin: auto auto 10px auto;
   border-radius: 20px;
+  @media (max-width: 500px) {
+    /* 横幅が500px以下の場合に適用するスタイル */
+    height: 610px;
+  }
+  @media (min-width: 501px) {
+    /* 横幅が501px以上の場合に適用するスタイル */
+    width: 480px;
+    height: 610px;
+  }
+  @media (min-width: 650px) {
+    width: 630px;
+    height: 610px;
+  }
+  @media (min-width: 1000px) {
+    width: 950px;
+    height: 610px;
+  }
 }
 
 /* QAエリア */
