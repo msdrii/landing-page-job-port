@@ -1519,6 +1519,10 @@ html {
   background-color: azure;
   margin: auto auto 10px auto;
 }
+.ctaBg3 {
+  background-color: azure;
+  margin: auto auto 40px auto;
+}
 
 .btn_arrow {
   position: relative;
@@ -2404,4 +2408,29 @@ iframe {
   transform: rotateZ(45deg);
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+}
+
+.animation {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  /* width: 128px; */
+}
+
+.keyframe6 {
+  animation-name: poyopoyo;
+}
+
+@keyframes poyopoyo {
+  0%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1);
+  }
+  50%,
+  70% {
+    transform: scale(0.95);
+  }
 }
